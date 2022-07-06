@@ -7,39 +7,44 @@ const AddForm = ({onAddedToBasket}) => {
 
     return (
         <form onSubmit={() => onAddedToBasket('hola')} noValidate autoComplete="off" className="form">
-            <TextField 
-                className="form__input" 
-                id="id"
-                color="info"
-                label={'ID товара'}
-                inputProps={{'data-input':"id"}}
-                required
-            />
+            <div className="form__container">
+                <div className="form__input-container">
+                    <TextField 
+                        className="form__input" 
+                        id="id"
+                        color="info"
+                        label={'ID товара'}
+                        inputProps={{'data-input':"id"}}
+                        required
+                    />
 
-            <TextField 
-                className="form__input" 
-                id="name"
-                color="info"
-                label={'Название товара'}
-                inputProps={{'data-input':"name"}}
-                required 
-           />
+                    <TextField 
+                        className="form__input" 
+                        id="name"
+                        color="info"
+                        label={'Название товара'}
+                        inputProps={{'data-input':"name"}}
+                        required 
+                />
 
-            <TextField 
-                className="form__input"
-                id="price"
-                color="info"
-                label={'Цена товара'}
-                inputProps={{'data-input':"price"}} 
-                required
-            />
+                    <TextField 
+                        className="form__input"
+                        id="price"
+                        color="info"
+                        label={'Цена товара'}
+                        inputProps={{'data-input':"price"}} 
+                        required
+                    />
+                </div>
 
-            <Button
-                onClick={() => onAddedToBasket('hola')}
-                variant="contained"
-                color="info">
-                Send
-            </Button>
+                <Button
+                    className="form__button"
+                    onClick={() => onAddedToBasket('hola')}
+                    variant="contained"
+                    color="info">
+                    Send
+                </Button>
+            </div>
         </form>
     ); 
 
