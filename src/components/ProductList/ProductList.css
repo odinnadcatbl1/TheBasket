@@ -1,0 +1,25 @@
+.tableContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    justify-content: center;
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    border: 1px solid #F3F3F3;
+    padding: 20px;
+    background-color: #FAFAFA;
+    border-radius: 15px;
+}
+
+.productListTitle {
+    width: 720px;
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    background-color: #FAFAFA;
+    border-radius: 15px;
+    padding: 20px 0;
+}

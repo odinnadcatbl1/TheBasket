@@ -5,4 +5,11 @@ const addToBasket = (good) => {
     };
 };
 
-export {addToBasket};
+const deletedFromBasket = (goodId) => {
+    return {
+        type: 'GOOD_DELETED_FROM_BASKET',
+        payload: goodId
+    };
+}
+
+export {addToBasket, deletedFromBasket};

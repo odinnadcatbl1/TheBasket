@@ -6,10 +6,10 @@ import { addToBasket } from "../../actions";
 
 const AddForm = ({onAddedToBasket}) => {
 
-    const [formInputs, setFormInputs] = useState({id: '', name:'', price: ''});
+    const [formInputs, setFormInputs] = useState({id: '', key: '', name:'', price: ''});
     
     const onIdInputChange = (e) => {
-        setFormInputs((prev) => ({...prev, id: e.target.value}));
+        setFormInputs((prev) => ({...prev, key: e.target.value}));
     };
 
     const onNameInputChange = (e) => {
@@ -21,12 +21,12 @@ const AddForm = ({onAddedToBasket}) => {
     };
 
     const onSubmitForm = () => {
-        if (formInputs.id && formInputs.name, formInputs.price) {
-            console.log(formInputs);
+        if (formInputs.key && formInputs.name, formInputs.price) {
+            formInputs.id = Date.now().toString();
             onAddedToBasket(formInputs);
-            setFormInputs({id: '', name:'', price: ''});
+            setFormInputs({id: '', key: '', name:'', price: ''});
         } else {
-            console.log('заполните все поля');
+            alert('Fill in all the fields!');
         }
     };
 
@@ -39,9 +39,9 @@ const AddForm = ({onAddedToBasket}) => {
                         className="form__input" 
                         key="id"
                         color="info"
-                        label={'ID товара'}
+                        label={'good ID'}
                         required
-                        value={formInputs.id}
+                        value={formInputs.key}
                         onChange={onIdInputChange}
                     />
 
@@ -49,7 +49,7 @@ const AddForm = ({onAddedToBasket}) => {
                         className="form__input" 
                         key="name"
                         color="info"
-                        label={'Название товара'}
+                        label={'good name'}
                         required
                         value={formInputs.name} 
                         onChange={onNameInputChange}                   
@@ -59,7 +59,7 @@ const AddForm = ({onAddedToBasket}) => {
                         className="form__input"
                         key="price"
                         color="info"
-                        label={'Цена товара'}
+                        label={'good price'}
                         required
                         value={formInputs.price}
                         onChange={onPriceInputChange}
@@ -80,8 +80,8 @@ const AddForm = ({onAddedToBasket}) => {
 
 };
 
-const mapStateToProps = ({goods}) => {
-    return {goods};
+const mapStateToProps = ({goods, sale}) => {
+    return {goods, sale};
 }
 
 const mapDispatchToProps = (dispatch) => {

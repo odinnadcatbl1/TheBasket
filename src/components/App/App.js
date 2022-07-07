@@ -1,8 +1,14 @@
 import AddForm from "../AddForm/AddForm";
+import ProductList from "../ProductList/ProductList";
+
+import "./App.css";
 
 const App = () => {
     return (
-        <AddForm/>
+        <div className="app">
+            <AddForm />
+            <ProductList />
+        </div>
     );
 };
 

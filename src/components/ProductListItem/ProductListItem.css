@@ -1,0 +1,12 @@
+.delete-icon {
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.delete-icon:hover {
+    transform: scale(1.2);
+}
+
+.wa {
+    font-family: 'Poppins', sans-serif;
+}

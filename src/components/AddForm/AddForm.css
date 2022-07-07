@@ -27,8 +27,6 @@
 .form__button {
     margin-top: 25px !important;
     display: block;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 
