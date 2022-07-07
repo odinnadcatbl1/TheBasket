@@ -1,33 +1,42 @@
-const initialState = [
-    {
-        id: 1,
-        name: "first",
-        price: "400"
-    }, 
+const initialState = {
+    goods: [
+        {
+            id: '1',
+            name: "first",
+            price: "400"
+        }, 
+    
+        {
+            id: '2',
+            name: "second",
+            price: "500"
+        }
+    ]
+};
 
-    {
-        id: 2,
-        name: "second",
-        price: "500"
-    }
-]
+
 
 const addToBasket = (state, good) => {
-    state.push(good);
-    console.log(state);
-    return state;
-}
+    console.log(state, good);
+    return { 
+        goods: [
+            ...state.goods,
+            good
+        ]
+    }
+};
+
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
 
         case 'GOOD_ADDED_TO_BASKET':
-            addToBasket(state, action.payload);
+            return addToBasket(state, action.payload);
 
         default:
             return state;
 
     }
-}
+};
 
 export default reducer;
