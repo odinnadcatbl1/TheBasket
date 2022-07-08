@@ -15,7 +15,7 @@ const initialState = {
         }
     ],
 
-    sale: 10,
+    sale: 0,
 };
 
 
