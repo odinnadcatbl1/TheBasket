@@ -5,7 +5,7 @@ import './ProductList.css';
 import ProductListItem from "../ProductListItem/ProductListItem";
 import { deletedFromBasket } from "../../actions";
 
-const ProductList = ({goods, onDeletedFromBasket}) => {
+const ProductList = ({goods, sale, onDeletedFromBasket}) => {
     if (goods.length) {
         return (
             <TableContainer className="tableContainer">
@@ -13,16 +13,16 @@ const ProductList = ({goods, onDeletedFromBasket}) => {
                 <Table>
                     <TableHead>
                         <TableRow>
-                            <TableCell align="center">ID</TableCell>
-                            <TableCell align="center">Имя товара</TableCell>
-                            <TableCell align="center">Цена товара</TableCell>
+                            <TableCell align="center"><div className="rowTitle">ID</div></TableCell>
+                            <TableCell align="center"><div className="rowTitle">name</div></TableCell>
+                            <TableCell align="center"><div className="rowTitle">Price</div></TableCell>
                             <TableCell align="center"></TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {
                             goods.map(good => (
-                                <ProductListItem key={good.id} good={good} onDeleted={onDeletedFromBasket}/>
+                                <ProductListItem key={good.id} good={good} sale={sale} onDeleted={onDeletedFromBasket}/>
                             ))                       
                         }
                     </TableBody>

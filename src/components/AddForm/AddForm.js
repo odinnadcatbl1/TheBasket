@@ -17,7 +17,8 @@ const AddForm = ({onAddedToBasket}) => {
     };
 
     const onPriceInputChange = (e) => {
-        setFormInputs((prev) => ({...prev, price: e.target.value}));
+        let price = e.target.value.replace(/[^\d]/g, "");
+        setFormInputs((prev) => ({...prev, price: price}));
     };
 
     const onSubmitForm = () => {
@@ -59,11 +60,13 @@ const AddForm = ({onAddedToBasket}) => {
                         className="form__input"
                         key="price"
                         color="info"
+                        input="text"
                         label={'good price'}
                         required
                         value={formInputs.price}
                         onChange={onPriceInputChange}
-                        
+                        inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
+    
                     />
                 </div>
 
@@ -80,14 +83,14 @@ const AddForm = ({onAddedToBasket}) => {
 
 };
 
-const mapStateToProps = ({goods, sale}) => {
-    return {goods, sale};
-}
+const mapStateToProps = ({good}) => {
+    return {good};
+};
 
 const mapDispatchToProps = (dispatch) => {
     return {
         onAddedToBasket: (good) => dispatch(addToBasket(good))
-    }
-}
+    };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddForm);

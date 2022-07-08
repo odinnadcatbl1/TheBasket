@@ -1,0 +1,20 @@
+.statsBlock {
+    width: 50%;
+    font-size: 18px;
+    text-align: start;
+}
+
+.totalSum {
+    margin-top: 15px;
+    display: flex;
+}
+
+.saleTotalSum {
+    margin-right: 10px;
+    text-decoration: line-through;
+    font-size: 16px;
+}
+
+.goodsCount {
+    display: flex;
+}

@@ -13,7 +13,9 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <Header />
-      <App/>
+      <div className='appContainer'>
+        <App/>
+      </div>
     </Provider>
   </React.StrictMode>
 );

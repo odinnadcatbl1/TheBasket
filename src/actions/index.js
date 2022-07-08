@@ -10,6 +10,13 @@ const deletedFromBasket = (goodId) => {
         type: 'GOOD_DELETED_FROM_BASKET',
         payload: goodId
     };
-}
+};
 
-export {addToBasket, deletedFromBasket};
+const addSale = (sale) => {
+    return {
+        type: 'ADD_SALE',
+        payload: sale
+    };
+}; 
+
+export {addToBasket, deletedFromBasket, addSale};

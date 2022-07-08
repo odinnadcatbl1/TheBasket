@@ -2,3 +2,9 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.appContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

@@ -15,7 +15,7 @@ const initialState = {
         }
     ],
 
-    sale: 0,
+    sale: 10,
 };
 
 
@@ -50,6 +50,12 @@ const reducer = (state = initialState, action) => {
         
         case 'GOOD_DELETED_FROM_BASKET': 
             return deletedFromBasket(state, action.payload);
+        
+        case 'ADD_SALE': 
+            return {
+                ...state,
+                sale: action.payload
+            }
 
         default:
             return state;
